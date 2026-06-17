@@ -1,9 +1,10 @@
 import React, { useState, useCallback } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, Alert, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Alert, ScrollView } from "react-native";
 import { ScreenContainer } from "@/components/ScreenContainer";
 import { useLocalSearchParams, router, useFocusEffect } from "expo-router";
 import { useProductRepository, ProductDatabase } from "@/database/productRepository";
 import { Feather } from "@expo/vector-icons";
+import { Image } from "expo-image"
 
 export default function ProductDetails() {
     // Captura os parâmetros passados pela rota (o id vem como string)
@@ -91,7 +92,10 @@ export default function ProductDetails() {
 
             {/* Bloco de Imagem Grande */}
             {produto.url_imagem ? (
-                <Image source={{ uri: produto.url_imagem }} style={styles.mainImage} resizeMode="cover" />
+                <Image
+                    source={{ uri: produto.url_imagem }}
+                    style={styles.mainImage}
+                />
             ) : (
                 <View style={styles.imagePlaceholderLarge}>
                     <Feather name="image" size={48} color="#676767" />
@@ -126,7 +130,7 @@ export default function ProductDetails() {
                     <TouchableOpacity
                         style={[styles.actionButton, styles.editButton]}
                         activeOpacity={0.8}
-                        onPress={() => Alert.alert("Em breve", "Vamos linkar a edição no próximo passo!")}
+                        onPress={() => router.push(`/edit/${productId}`)} // 👈 Agora passa como /edit/123
                     >
                         <Feather name="edit-2" size={18} color="#FFF" />
                         <Text style={styles.actionButtonText}>Editar</Text>
@@ -175,7 +179,8 @@ const styles = StyleSheet.create({
         // height: 220,
         borderRadius: 12,
         marginBottom: 20,
-        aspectRatio: 8/6,
+        aspectRatio: 8 / 6,
+        objectFit: "cover"
     },
     imagePlaceholderLarge: {
         width: "100%",
