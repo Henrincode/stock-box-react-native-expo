@@ -3,6 +3,7 @@
     "name": "stock-box-react-native-expo",
     "slug": "stock-box-react-native-expo",
     "version": "1.0.0",
+    "scheme": "stockbox",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
