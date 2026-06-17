@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
-// Trocamos o Constants pelo hook oficial de insets
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 
@@ -38,7 +37,7 @@ export function ScreenContainer({ children, scrollable = false }: ScreenContaine
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#1A1A1A',
+        backgroundColor: '#1e1e1e',
     },
     scrollContent: {
         padding: 10,
@@ -46,6 +45,6 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        paddingHorizontal: 10,
+        padding: 10,
     },
 });
