@@ -111,9 +111,14 @@ export default function ProductDetails() {
                     <View style={styles.qtyBadge}>
                         <Text style={styles.qtyBadgeText}>Estoque: {produto.quantidade} un</Text>
                     </View>
-                    <Text style={styles.productPrice}>
-                        R$ {produto.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
-                    </Text>
+                    <View style={{}}>
+                        <Text style={styles.productPrice}>
+                            R$ {produto.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 })} un
+                        </Text>
+                        <Text style={styles.productPrice}>
+                            R$ {(produto.quantidade * produto.valor).toLocaleString("pt-BR", { minimumFractionDigits: 2 })} total
+                        </Text>
+                    </View>
                 </View>
 
                 <View style={styles.divider} />
@@ -210,7 +215,7 @@ const styles = StyleSheet.create({
     badgeContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "flex-start",
     },
     qtyBadge: {
         backgroundColor: "#1E3A8A",
