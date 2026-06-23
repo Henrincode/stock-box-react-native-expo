@@ -18,7 +18,7 @@ export function ScreenContainer({ children, scrollable = false }: ScreenContaine
 
             {scrollable ? (
                 <ScrollView
-                    contentContainerStyle={[styles.scrollContent, { paddingTop: insets.top + 10, paddingBottom: insets.bottom, }]}
+                    contentContainerStyle={[styles.scrollContent, { paddingTop: insets.top, paddingBottom: insets.bottom, }]}
                     keyboardShouldPersistTaps="handled"
                     showsHorizontalScrollIndicator={false}
                     showsVerticalScrollIndicator={false}
@@ -26,7 +26,7 @@ export function ScreenContainer({ children, scrollable = false }: ScreenContaine
                     {children}
                 </ScrollView>
             ) : (
-                <View style={[styles.content, { paddingTop: insets.top + 10, paddingBottom: insets.bottom, }]}>
+                <View style={[styles.content, { paddingTop: insets.top, paddingBottom: insets.bottom, }]}>
                     {children}
                 </View>
             )}

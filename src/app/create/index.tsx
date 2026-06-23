@@ -99,8 +99,8 @@ export default function CreateProduct() {
         />
 
         {/* Linha com Qtd e Valor */}
-        <View style={styles.row}>
-          <View style={styles.column}>
+        {/* <View style={styles.row}> */}
+          {/* <View style={styles.column}> */}
             <Text style={styles.label}>Quantidade *</Text>
             <TextInput
               style={styles.input}
@@ -110,9 +110,9 @@ export default function CreateProduct() {
               value={quantidade}
               onChangeText={setQuantidade}
             />
-          </View>
+          {/* </View> */}
 
-          <View style={styles.column}>
+          {/* <View style={styles.column}> */}
             <Text style={styles.label}>Valor Unitário (R$) *</Text>
             <TextInput
               style={styles.input}
@@ -122,8 +122,8 @@ export default function CreateProduct() {
               value={valor}
               onChangeText={setValor}
             />
-          </View>
-        </View>
+          {/* </View> */}
+        {/* </View> */}
 
         {/* Campo da URL da Imagem */}
         <Text style={styles.label}>URL da Imagem *</Text>
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   label: {
-    color: "#1e1e1e",
+    color: "#aaa",
     fontSize: 14,
     fontWeight: "600",
     marginBottom: -5,

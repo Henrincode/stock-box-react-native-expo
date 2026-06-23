@@ -104,17 +104,17 @@ export default function EditProduct() {
         <Text style={styles.label}>Descrição</Text>
         <TextInput style={[styles.input, styles.textArea]} value={descricao} onChangeText={setDescricao} placeholder="Detalhes sobre o produto..." placeholderTextColor="#676767" multiline numberOfLines={3} />
 
-        <View style={styles.row}>
-          <View style={styles.flex1}>
+        {/* <View style={styles.row}> */}
+          {/* <View style={styles.flex1}> */}
             <Text style={styles.label}>Quantidade *</Text>
             <TextInput style={styles.input} value={quantidade} onChangeText={setQuantidade} keyboardType="numeric" placeholder="0" placeholderTextColor="#676767" />
-          </View>
+          {/* </View> */}
 
-          <View style={styles.flex1}>
+          {/* <View style={styles.flex1}> */}
             <Text style={styles.label}>Valor (R$) *</Text>
             <TextInput style={styles.input} value={valor} onChangeText={setValor} keyboardType="decimal-pad" placeholder="0.00" placeholderTextColor="#676767" />
-          </View>
-        </View>
+          {/* </View> */}
+        {/* </View> */}
 
         <Text style={styles.label}>URL da Imagem</Text>
         <TextInput style={styles.input} value={urlImagem} onChangeText={setUrlImagem} placeholder="https://linkdaimagem.com/foto.jpg" placeholderTextColor="#676767" autoCapitalize="none" keyboardType="url" />
